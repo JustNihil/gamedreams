@@ -1,4 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+<style>
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  font-weight: bold;
+}
+
+.field input[type="email"],
+.field input[type="text"],
+.field input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.emphasis {
+  color: #ff0000;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.actions {
+  margin-top: 20px;
+}
+
+.actions input[type="submit"] {
+  background-color: #008000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #006400;
+}
+
+.actions a {
+  color: #333;
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+.actions a:hover {
+  text-decoration: underline;
+}
+</style>
+
 <h2>Sign up</h2>
+
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -36,3 +105,5 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+</body>
+</html>

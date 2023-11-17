@@ -1,3 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+</head>
+<body>
+<style>
+h2 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.actions input[type="submit"] {
+  background-color: #008000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.actions input[type="submit"]:hover {
+  background-color: #006400;
+}
+
+h3 {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.delete-button {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #8b0000;
+}
+
+.back-link {
+  display: block;
+  margin-top: 20px;
+  color: #333;
+  text-decoration: underline;
+}
+</style>
+
 <h2>Редактировать профиль</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -49,3 +114,6 @@
 <div>Прощай аккаунт <%= button_to "Удалить", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
 
 <%= link_to "На главную", :back %>
+
+</body>
+</html>
