@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  
+
+development:
+  <<: *default
+  database: gamedreams_development
+  username: gamedreams_db_admin
+  password: gamedreams-db-pas
+  host: localhost
+
+test:
+  <<: *default
+  database: gamedreams_test
+
+
