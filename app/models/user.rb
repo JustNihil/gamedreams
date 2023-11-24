@@ -6,5 +6,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :timeoutable
 
-         validates :first_name, :last_name, presence: true
+         validates :first_name, :last_name, presence: true, length: { maximum: 100, minimum: 3 }
+         validates :email, email: {mode: :strict}, length: { maximum: 150, minimum: 7 }
 end
