@@ -5,7 +5,7 @@ default: &default
   username: gamedreams_db_admin
   password: gamedreams-db-pas
   host: localhost
-  port: 5433
+  port: 5432
   
 
 development:
