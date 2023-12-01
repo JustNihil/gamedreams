@@ -6,18 +6,17 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
-  end
+     @product = Product.find(params[:id])
+   end
 
   def new
     @product = Product.new
   end
 
   def create
-    @product = current_user.products.build(product_params)
-
+    @product = Product.new(product_params)
     if @product.save
-      redirect_to @product, notice: "Товар успешно создан."
+      redirect_to @product, notice: 'Товар успешно создан!'
     else
       render :new
     end
@@ -46,6 +45,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :id)
+    params.require(:product).permit(:name,:price, :id)
   end
 end
