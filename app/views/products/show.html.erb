@@ -1,0 +1,15 @@
+<h1><%= @product.name %></h1>
+
+<p><%= @product.description %></p>
+<p><strong>Цена:</strong> <%= @product.price %></p>
+
+<% if user_signed_in? && current_user == @product.user %>
+  <p><%= link_to 'Редактировать', edit_product_path(@product) %></p>
+  <p><%= link_to 'Удалить', @product, method: :delete, data: { confirm: 'Вы уверены?' } %></p>
+<% else %>
+  <% if user_signed_in? %>
+    <p><%= link_to 'Купить', buy_product_path(@product) %></p>
+  <% else %>
+    <p><%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %> для покупки</p>
+  <% end %>
+<% end %>

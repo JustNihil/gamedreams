@@ -1,0 +1,12 @@
+<h1>Список товаров</h1>
+
+<% @products.each do |product| %>
+  <h2><%= product.name %></h2>
+  <p><%= product.description %></p>
+  <p><strong>Цена:</strong> <%= product.price %></p>
+  <p><%= link_to 'Подробнее', product %></p>
+<% end %>
+
+<% if user_signed_in? %>
+  <p><%= link_to 'Добавить товар', new_product_path %></p>
+<% end %>
