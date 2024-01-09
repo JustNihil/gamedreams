@@ -1,17 +1,9 @@
-<h1>Добавить товар</h1>
+<h1>Новая игра </h1>
 
-<%= form_with(model: @product, url: products_path) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+<%= render "form", product: @product %>
 
+<br>
 
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
-
-  <%= form.submit 'Сохранить' %>
-<% end %>
+<div>
+  <%= link_to "Вернуться ко всем играм", products_path %>
+</div>

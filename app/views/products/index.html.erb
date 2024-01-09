@@ -1,12 +1,15 @@
-<h1>Список товаров</h1>
+<p style="color: green"><%= notice %></p>
 
-<% @products.each do |product| %>
-  <h2><%= product.name %></h2>
-  <p><%= product.description %></p>
-  <p><strong>Цена:</strong> <%= product.price %></p>
-  <p><%= link_to 'Подробнее', product %></p>
-<% end %>
+<%= link_to 'Мой профиль', profile_path %>
+<%= link_to 'Модератор', :admin_page %>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'Добавить товар', new_product_path %></p>
-<% end %>
+<h1>Все игры</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Подробнее", product %>
+    </p>
+  <% end %>
+</div>

@@ -1,0 +1,18 @@
+<%= link_to 'Главная', products_path %>
+
+<h1>Админ</h1>
+
+<%= link_to 'Новая игра', new_product_path %>
+
+<h1>Все игры</h1>
+
+<div id="products">
+  <% @products.each do |product| %>
+    <%= render product %>
+    <p>
+      <%= link_to "Подробнее", product %>
+      <%= link_to "Редактировать", edit_product_path(product) %>
+      <%= button_to "Удалить игру", product, method: :delete %>
+    </p>
+  <% end %>
+</div>

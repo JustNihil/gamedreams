@@ -1,9 +1,13 @@
-<h1><%= @product.name %></h1>
+<p style="color: green"><%= notice %></p>
 
-<p><%= @product.description %></p>
-<p><strong>Цена:</strong> <%= @product.price %></p>
+<%= render @product %>
 
-<% if user_signed_in? %>
-  <p><%= link_to 'Редактировать', edit_product_path(@product) %></p>
-  <%= button_to "Удалить", product_path(@product), data: { confirm: "Вы уверены?", turbo_confirm: "Вы уверены?" }, method: :delete %>
+<div>
+  <% if @user_buy_current_product %>
+    <%= link_to "Вернуть игру", products_users_cancel_path(@product) %> |
+  <% else %>
+    <%= link_to "Купить", products_users_buy_path(@product) %> |
 <% end %>
+  <%= link_to "Вернуться ко всем играм", products_path %>
+
+</div>

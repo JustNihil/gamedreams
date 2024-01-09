@@ -1,15 +1,10 @@
-<h1>Редактировать товар</h1>
+<h1>Изменение информации об игрн</h1>
 
-<%= form_with(model: @product, url: product_path(@product), method: :patch) do |form| %>
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+<%= render "form", product: @product %>
 
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
-  </div>
+<br>
 
-  <%= form.submit 'Сохранить' %>
-<% end %>
+<div>
+  <%= link_to "Подробнее", @product %> |
+  <%= link_to "Вернуться ко всем играм", products_path %>
+</div>
